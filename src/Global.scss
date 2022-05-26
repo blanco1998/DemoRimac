@@ -1,0 +1,374 @@
+@import 'GlobalThemes.scss';
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 5vw 5vw;
+    font-family: 'arial';
+    color: $color-violet;
+    &__call {
+        display: flex;
+        align-items: center;
+        margin-left: 5px;
+        &--ml-5 {
+            margin-left: 8px;
+        }
+    }
+    &--special {
+        background-color: $color-palid;
+    }
+    &--normal {
+        background-color: $color-white;
+        border-bottom: 1px solid $color-neutral;
+    }
+}
+
+.banner {
+    font-family: 'arial';
+    padding: 10vw 0 10vw 0;
+    &__img {
+        width: 33.5vw;
+        height: 148vw;
+    }
+    &__section-1 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5vw;
+        padding-left: 5vw;
+    }
+    &__section-2 {
+        position: absolute;
+        top: -22vw;
+        right: 0; 
+    }
+    &--p1 {
+        color: $color-black;
+        letter-spacing: 1px;
+        font-weight: bold;
+        font-size: 3vw;
+    }
+    &--p2 {
+        color: $color-black;
+        font-size: 8vw;
+        line-height: 11vw;
+    }
+    &--p3 {
+        color: $color-gray;
+        font-size: 4.2vw;
+        line-height: 7vw;
+    }
+    &--bg-palid {
+        background-color: $color-palid;
+    }
+    &--red {
+        color: $color-red;
+    }
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    padding: 5vw 5vw 10vw 5vw;
+    &__text {
+        font-family: 'arial';
+        font-size: 7vw;
+        font-weight: 100;
+        color: $color-black;
+        margin: 5vw 0;
+    }
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 5vw;
+    &__error {
+        color: $color-red;
+        font-family: 'arial';
+        font-size: 14px;
+        position: relative;
+        top: -10px;
+    }
+    &__group {
+        display: flex;
+    }
+    &__select {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        outline: none;
+        border: .5px solid $color-gray;
+        border-radius: 5px;
+        color: $color-black;
+        padding: 0 0 0 20px;
+        &--shared {
+            flex: 1;
+            border-radius: 5px 0 0 5px;
+            max-width: 80px;
+        }
+    }
+    &__input {
+        border: .5px solid $color-gray;
+        border-radius: 5px;
+        padding: 20px;
+        outline: none;
+        &--shared{
+            flex: 2;
+            border-radius: 0 5px 5px 0;
+            border-left: none;
+        }
+        &--checkbox {
+            flex: 1;
+            margin-right: 15px;
+        }
+    }
+    &__label {
+        color: $color-black;
+        font-family: 'arial';
+        font-size: 5vw;
+        &--checkbox {
+            flex: 12;
+        }
+    }
+}
+
+::placeholder {
+    font-size: 14px;
+    color: $color-gray;
+}
+
+.button {
+    color: $color-palid;
+    border: none;
+    border-radius: 8px;
+    padding: 20px;
+    width: 100%;
+    height: 50px;
+    font-size: 14px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    &--red {
+        background-color: $color-red;
+    }
+    &--violet {
+        background-color: $color-violet;
+    }
+    &--mtop {
+        margin-top: 20px;
+    }
+    &--padding {
+        padding: 5vw 5vw 10vw 5vw;
+    }
+}
+
+.resume {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    &__image {
+        width: 100%;
+    }
+    &__section {
+        padding: 5vw 5vw 10vw 5vw;
+        color: $color-black;
+        font-family: 'arial';
+        font-size: 7.5vw;
+        font-weight: 100;
+        line-height: 9vw;
+        padding-top: 10vw;
+        &--margin-top {
+            margin-top: -50px;
+        }
+        &--text-red {
+            color: $color-red;
+        }
+        &--text-small {
+            font-size: 4vw;
+            color: $color-gray;
+            line-height: 6vw;
+        }
+    }
+    &__footer {
+        font-family: 'arial';
+        font-size: 2vw;
+        padding: 5vw 5vw 10vw 5vw;
+        border-top: 1px solid $color-neutral;
+        &--margin-top {
+            margin-top: 20px;
+        }
+    }
+}
+
+.plan {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    font-family: 'arial';
+    color: $color-black;
+    &__step {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        padding: 5vw 10vw 5vw 5vw;
+        font-weight: bold;
+        font-size: 3vw;
+        &--dummy-bar {
+            background-color: $color-violet;
+            border-radius: 50px;
+            height: 5px;
+            width: 50%;
+        }
+        &--image {
+            width: 10%;
+        }
+    }
+    &__banner {
+        background-color: $color-palid;
+        padding: 12vw 5vw;
+        line-height: 10vw;
+        &__sub {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            background-color: $color-white;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 0vw 5vw;
+            margin-top: 10vw;
+        }
+        &--big {
+            font-size: 7vw;
+        }
+        &--xbig {
+            font-size: 8.5vw;
+        }
+        &--small {
+            font-size: 5vw;
+        }
+        &--xsmall {
+            font-size: 4vw;
+            color: $color-gray;
+        }
+    }
+    &__footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px solid $color-neutral;
+        box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.15);
+        padding: 5vw 5vw;
+        margin-top: 15vw;
+        &__info {
+            display: flex;
+            flex-direction: column;
+        }
+        &__action {
+            width: 60%;
+        }
+    }
+    &--small {
+        font-size: 3vw;
+        font-weight: bold;
+    }
+    &--amount {
+        font-size: 7vw;
+    }
+}
+
+.planTabs {
+    &__tabs {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        &--button {
+            margin: 0vw 0;
+            text-transform: uppercase;
+            font-size: 2.5vw;
+            font-weight: bold;
+            letter-spacing: .5px;
+            color: $color-black;
+            padding: 5vw 6vw;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid $color-neutral;  
+        }
+        &--active {
+            border-bottom: 2px solid $color-red;
+            color: $color-red;
+        }
+    }
+    &--big-text {
+        font-size: 7vw;
+        padding: 5.5vw 5vw;
+    }
+}
+
+.planItem {
+    display: flex;
+    margin: 5vw 5vw;
+    &__image {
+        width: 10vw;
+    }
+    &__text-check {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 5vw;
+        padding-left: 5vw;
+        gap: 20vw;
+    }
+    &__paragraph {
+        line-height: 6vw;
+        margin-top: 5vw;
+        padding-left: 5vw;
+        letter-spacing: 1px;
+        color: $color-gray;
+    }
+    &__show {
+        font-size: 3vw;
+        letter-spacing: 2px;
+        font-weight: bold;
+        padding-left: 5vw;
+        margin-top: 5vw;
+        color: $color-gray;
+    }
+    &--border {
+        border-bottom: .5px solid $color-gray;
+        padding-bottom: 25px;
+    }
+    &--fill {
+        width: 100%;
+    }
+}
+
+.picker {
+    padding: 10vw 5vw;
+    &__title {
+        font-size: 7.5vw;
+        color: $color-black;
+        &--small {
+            font-size: 6vw;
+            color: $color-gray;
+        }
+    }
+    &__widget {
+        display: grid;
+        grid-template-columns: 1fr 10fr 1fr;
+        align-items: center;
+        text-align: center;
+        border: .5px solid $color-gray;
+        border-radius: 3px;
+        padding: 5vw;
+        margin-top: 10vw;
+        font-size: 4vw;
+        &--sizing {
+            font-size: 6vw;
+        }
+        &--violet {
+            color: $color-violet;
+        }
+    }
+}
