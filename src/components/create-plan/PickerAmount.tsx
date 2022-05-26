@@ -15,6 +15,15 @@ const PickerAmount = () => {
         })
     }
 
+    const validateDecrease = () => {
+
+        setOperations({
+            ...operations, 
+            amount: amount - 100,
+            total: amount
+        })
+    }
+
     return ( 
         // 1. La suma asegurada debe estar entre el MIN y MAX 
         // valor y aumenta o disminuye cada $ 100. 
@@ -26,13 +35,7 @@ const PickerAmount = () => {
 
             <div className='picker__widget'>
                 <p className='picker__widget--sizing picker__widget--violet'
-                    onClick={() => 
-                        setOperations({
-                            ...operations, 
-                            amount: amount - 100,
-                            total: amount
-                        })
-                    }>
+                    onClick={validateDecrease}>
                     -
                 </p>
 
