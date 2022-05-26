@@ -10,7 +10,12 @@ const AppProvider = ( {children}: Props ) => {
 
     const [special, setSpecial] = useState(false)
     const [usuario, setUsuario] = useState({} as User)
-    const [operations, setOperations] = useState({} as Operations)
+    const [operations, setOperations] = useState({
+        amount: 16001,
+        item1: 0,
+        item2: 0,
+        item3: 0
+    } as Operations)
 
     return (
 

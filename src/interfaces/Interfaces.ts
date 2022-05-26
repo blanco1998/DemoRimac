@@ -9,6 +9,7 @@ export interface Props { // Para componentes
     paragraph?: string
     title?: string
     image?: string
+    precio?: number
 
 }
 
@@ -29,7 +30,9 @@ export interface User { // Para usuarios en context
 
 export interface Operations {
     amount: number
-    total: number
+    item1: number
+    item2: number
+    item3: number
 }
 
 

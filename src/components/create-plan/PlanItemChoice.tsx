@@ -1,9 +1,63 @@
-import { useState } from "react"
+import { useContext, useEffect, useState } from "react"
+import { AppContext } from "../../context/AppProvider"
 import { Props } from "../../interfaces/Interfaces"
 
-const PlanItemChoice = ({paragraph, title, image}: Props) => {
+const PlanItemChoice = ({paragraph, title, image, precio}: Props) => {
 
     const [show, setShow] = useState(false)
+    const { operations, setOperations } = useContext(AppContext)
+
+    const value = (checked: any) => {
+
+        if(checked) {
+
+            if(precio === 15) {
+                setOperations({
+                    ...operations,
+                    item1: precio
+                })
+            }
+    
+            if(precio === 20) {
+                setOperations({
+                    ...operations,
+                    item2: precio
+                })
+            }
+    
+            if(precio === 50) {
+                setOperations({
+                    ...operations,
+                    item3: precio
+                })
+            }
+
+        } else {
+
+            if(precio === 15) {
+                setOperations({
+                    ...operations,
+                    item1: 0
+                })
+            }
+    
+            if(precio === 20) {
+                setOperations({
+                    ...operations,
+                    item2: 0
+                })
+            }
+    
+            if(precio === 50) {
+                setOperations({
+                    ...operations,
+                    item3: 0
+                })
+            }
+        }
+        
+    }
+
 
     return (
         <div className='planItem planItem--border'>
@@ -14,11 +68,8 @@ const PlanItemChoice = ({paragraph, title, image}: Props) => {
 
             <div className='planItem--fill'>
                 <div className='planItem__text-check'>
-
                     <p>{title}</p>
-
-                    <input type='checkbox' />
-
+                    <input type='checkbox' onChange={e => value(e.target.checked)} />
                 </div>
 
                 {   !show ? null :

@@ -1,9 +1,21 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
+import { AppContext } from "../../context/AppProvider"
 import PlanItemChoice from "./PlanItemChoice"
 
 const PlanTabs = () => {
 
     const [tab, setTab] = useState(1)
+    const { operations, setOperations } = useContext(AppContext)
+    const { amount } = operations
+
+    const validateDecrease = () => {
+        setOperations({
+            ...operations,
+            Item2: 0
+        })
+
+        return null
+    }
 
     return (
         <div className='planTabs'>
@@ -29,13 +41,20 @@ const PlanTabs = () => {
                 <>
                     <PlanItemChoice 
                         title='Llanta robada' 
-                        image='assets/images/car-wheel-stolen.svg' />
-                    <PlanItemChoice 
-                        title='Choque y/o pasarte la luz roja' 
-                        image='assets/images/car-red-light.svg' />
+                        image='assets/images/car-wheel-stolen.svg' 
+                        precio={15}/>
+
+                    { amount > 16000 ? validateDecrease :
+                        <PlanItemChoice 
+                            title='Choque y/o pasarte la luz roja' 
+                            image='assets/images/car-red-light.svg' 
+                            precio={20}/>
+                    }
+
                     <PlanItemChoice 
                         title='Atropello en la via Evitamiento' 
-                        image='assets/images/car-crash.svg' />
+                        image='assets/images/car-crash.svg' 
+                        precio={50}/>
                 </>
             }
             

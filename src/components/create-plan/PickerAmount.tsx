@@ -5,9 +5,19 @@ const PickerAmount = () => {
 
     const { operations, setOperations } = useContext(AppContext)
     const { amount } = operations
-    console.log(amount)
 
-    return (
+    const validateIncrease = () => {
+
+        setOperations({
+            ...operations, 
+            amount: amount + 100,
+            total: amount
+        })
+    }
+
+    return ( 
+        // 1. La suma asegurada debe estar entre el MIN y MAX 
+        // valor y aumenta o disminuye cada $ 100. 
         <div className='picker'>
             <div className='picker__title'>
                 <p>Indica la suma asegurada</p>
@@ -15,19 +25,23 @@ const PickerAmount = () => {
             </div>
 
             <div className='picker__widget'>
-                <p className='picker__widget--sizing picker__widget--violet'>
+                <p className='picker__widget--sizing picker__widget--violet'
+                    onClick={() => 
+                        setOperations({
+                            ...operations, 
+                            amount: amount - 100,
+                            total: amount
+                        })
+                    }>
                     -
                 </p>
 
                 <p className='picker__widget--sizing'>
-                    ${amount || '20.00'}
+                    ${amount} 
                 </p>
 
                 <p className='picker__widget--sizing picker__widget--violet'
-                    onClick={() => setOperations({
-                        ...operations, 
-                        amount: amount + 100
-                    })}>
+                    onClick={validateIncrease}>
                     +
                 </p>
             </div>
